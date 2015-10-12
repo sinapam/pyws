@@ -8,9 +8,9 @@ class Error(DefaultStrImplemntationMixin, Exception):
 
     error_type = ET_SERVER
 
-    def __unicode__(self):
+    def __str__(self):
         if self.__doc__:
-            return unicode(self.__doc__.strip() % self.args)
+            return str(self.__doc__.strip() % self.args)
         if self.args:
             return self.args[0]
         return 'unknown error'
@@ -21,8 +21,8 @@ class ClientErrorTypeMixin(Exception):
 
 
 class ConfigurationError(Error):
-    def __unicode__(self):
-        return unicode(self.args[0])
+    def __str__(self):
+        return str(self.args[0])
 
 
 class ServerAlreadyRegistered(ConfigurationError):
@@ -78,14 +78,14 @@ class ProtocolNotFound(ClientErrorTypeMixin, ProtocolError):
 
 
 class BadRequest(ClientErrorTypeMixin, ProtocolError):
-    def __unicode__(self):
+    def __str__(self):
         if not self.args:
             return u'Bad request'
         return u'Bad request: %s' % self.args[0]
 
 
 class AccessDenied(ClientErrorTypeMixin, ProtocolError):
-    def __unicode__(self):
+    def __str__(self):
         if not self.args or not self.args[0]:
             return u'Access denied'
         return u'Access denied for user %s' % self.args[0]

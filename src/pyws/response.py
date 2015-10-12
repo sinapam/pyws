@@ -25,7 +25,7 @@ class Response(DefaultStrImplemntationMixin):
         self.content_type = content_type
         self.status = status
 
-    def __unicode__(self):
+    def __str__(self):
         return u"""<pyws.response.Response
     content_type: %s
     text:

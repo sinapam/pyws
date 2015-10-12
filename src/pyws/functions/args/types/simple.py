@@ -23,9 +23,9 @@ class String(Type):
         if not isinstance(value, str):
             raise ValueError(value)
         try:
-            return unicode(value)
+            return str(value)
         except UnicodeDecodeError:
-            return unicode(value, 'utf-8')
+            return str(value, 'utf-8')
 
 
 class Boolean(Type):
@@ -47,7 +47,7 @@ class Boolean(Type):
 
     @classmethod
     def serialize(cls, value):
-        return unicode(value).lower()
+        return str(value).lower()
 
 
 class Integer(Type):

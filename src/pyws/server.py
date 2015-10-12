@@ -154,7 +154,7 @@ class Server(object):
         try:
             protocol = self.get_protocol(request)
         except ProtocolError as e:
-            return Response(unicode(e).encode(ENCODING))
+            return Response(str(e).encode(ENCODING))
 
         try:
 

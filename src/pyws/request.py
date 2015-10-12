@@ -20,7 +20,7 @@ class Request(DefaultStrImplemntationMixin):
         self.POST = POST
         self.COOKIES = COOKIES
 
-    def __unicode__(self):
+    def __str__(self):
         return u"""<pyws.request.Request
     tail: %s
     GET: %s

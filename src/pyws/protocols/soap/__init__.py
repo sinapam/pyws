@@ -34,7 +34,7 @@ def xml2obj(xml, schema):
     if not children:
         if xml.text is None:
             return None
-        return unicode(xml.text)
+        return str(xml.text)
     if issubclass(schema, List):
         return [xml2obj(child, schema.element_type) for child in children]
     if issubclass(schema, Dict):

@@ -76,6 +76,6 @@ class Protocol(object):
             'type': error_type_name,
             'name': error_type.__name__,
             'prefix': getattr(error_type, '__module__', ''),
-            'message': unicode(error),
+            'message': str(error),
             'params': error.args,
         }

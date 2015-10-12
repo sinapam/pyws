@@ -31,6 +31,6 @@ class Type(object):
     @classmethod
     def serialize(cls, value):
         try:
-            return unicode(value)
+            return str(value)
         except UnicodeDecodeError:
-            return unicode(value, 'utf-8')
+            return str(value, 'utf-8')
