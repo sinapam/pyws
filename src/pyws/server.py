@@ -99,7 +99,7 @@ class Server(object):
             raise NoProtocolsRegistered()
 
         if len(self.protocols) == 1:
-            name, tail = self.protocols.keys()[0], request.tail
+            name, tail = list(self.protocols.keys())[0], request.tail
         else:
             parts = request.tail.split('/', 1)
             name, tail = parts[0], (len(parts) > 1 and parts[1] or '')
