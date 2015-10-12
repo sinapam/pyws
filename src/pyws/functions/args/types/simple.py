@@ -16,11 +16,11 @@ class String(Type):
 
     none_value = ''
 
-    _represents = basestring
+    _represents = str
 
     @classmethod
     def _validate(cls, value):
-        if not isinstance(value, basestring):
+        if not isinstance(value, str):
             raise ValueError(value)
         try:
             return unicode(value)

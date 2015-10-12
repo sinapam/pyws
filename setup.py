@@ -20,14 +20,9 @@ long_description = \
     '''
 
 extra_requires = []
-minor_version = sys.version_info[1]
-if minor_version < 5:
-    raise Exception('pyws works only on python >= 2.5')
-elif minor_version == 5:
-    extra_requires += ['simplejson', 'ssl']
-
-if 'develop' in sys.argv:
-    extra_requires += ['unittest2', 'suds']
+major_version = sys.version_info[0]
+if major_version < 3:
+    raise Exception('This is pyws that gets ported to python3.')
 
 setup(
     name='pyws',

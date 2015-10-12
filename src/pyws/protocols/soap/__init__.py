@@ -10,8 +10,8 @@ from pyws.response import Response
 from pyws.protocols.base import Protocol
 from pyws.utils import ENCODING
 
-from utils import *
-from wsdl import WsdlGenerator
+from .utils import *
+from .wsdl import WsdlGenerator
 
 TAG_NAME_RE = re.compile('{(.*?)}(.*)')
 
