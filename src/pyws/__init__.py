@@ -1,1 +1,1 @@
-VERSION = '1.1.6.1-py3'
+VERSION = '1.1.6-py3'

@@ -8,7 +8,7 @@ def qname(name, ns=None, namespaces=None):
         return name
     if not namespaces:
         return '{%s}%s' % (ns, name)
-    prefix = filter(lambda x: x[1] == ns, namespaces.items())[0][0]
+    prefix = list(filter(lambda x: x[1] == ns, namespaces.items()))[0][0]
     return '%s:%s' % (prefix, name)
 
 def wsdl_name(name):
