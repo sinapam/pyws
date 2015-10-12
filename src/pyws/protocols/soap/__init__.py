@@ -1,4 +1,3 @@
-import itertools as it
 import re
 
 from functools import partial
@@ -87,7 +86,7 @@ def get_axis_package_name(ns):
     if not mo:
         raise ConfigurationError('No domain in service namespace')
     res = list(reversed(mo.group(1).split('.')))
-    return '.'.join(it.filter(lambda s: s, it.imap(
+    return '.'.join(filter(lambda s: s, map(
         lambda s: re.sub('[^\w]', '_', s), res + mo.group(2).split('/'))))
 
 
