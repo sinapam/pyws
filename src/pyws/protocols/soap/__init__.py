@@ -46,7 +46,7 @@ def xml2obj(xml, schema):
                     'XML doesn\'t match the required schema. '
                     '{%s}%s is unexpected under %s, '
                     'must be one of: %s' % (
-                        ns, name, xml.tag, ', '.join(schema.iterkeys())
+                        ns, name, xml.tag, ', '.join(schema.keys())
                     ))
             obj = xml2obj(child, schema[name])
             if name not in result:
